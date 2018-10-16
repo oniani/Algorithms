@@ -16,14 +16,13 @@ module BinarySearch where
 
 
 -- | Binary search
-binarySearch :: (Ord a) => [a] -> Int -> Int -> a -> Int
-binarySearch x l r i
-    | null x = -1                                  -- Checking list emptiness
-    | l < 0 || r > length x - 1 = -1               -- Checking index bounds
-    | i < head x || i > last x = -1                -- Checking value bounds
+binarySearch :: (Ord a) => [a] -> a -> Int -> Int -> Int
+binarySearch x i l r
+    | l > r = -1                                   -- Check if left is greater than right
     | x !! mid == i = mid                          -- Base case
-    | x !! mid > i = binarySearch x l (mid - 1) i  -- Left recursive case
-    | x !! mid < i = binarySearch x (mid + 1) r i  -- Right recursive case
+    | x !! mid > i = binarySearch x i l (mid - 1)  -- Left recursive case
+    | x !! mid < i = binarySearch x i (mid + 1) r  -- Right recursive case
+    | otherwise = -1
     where
         mid = quot (l + r) 2
 
@@ -31,4 +30,4 @@ binarySearch x l r i
 main = do
     let arr = [1..100]
     putStr "The element with the value of 10 is at the index "
-    print (binarySearch arr 0 99 10)  -- Prints out 9
+    print (binarySearch arr 10 0 99)  -- Prints out 9
