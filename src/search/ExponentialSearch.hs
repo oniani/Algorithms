@@ -14,13 +14,14 @@ https://en.wikipedia.org/wiki/Exponential_search
 
 module ExponentialSearch where
 
+import qualified Data.Vector as V
 import BinarySearch (binarySearch)
 
 
-exponentialSearch :: (Ord a) => [a] -> a -> Int -> Int
+exponentialSearch :: (Ord a) => V.Vector a -> a -> Int -> Maybe Int
 exponentialSearch x i s
-    | s == 0 = -1
-    | b >= s || x !! b >= i = multiplyByTwo b
+    | s == 0 = Nothing
+    | b >= s || x V.! b >= i = Just (multiplyByTwo b)
     | otherwise = binarySearch x i (b `div` 2) (min (b + 1) s)
     where
         b = 1
@@ -28,6 +29,6 @@ exponentialSearch x i s
 
 
 main = do
-    let arr = [1..100]
+    let arr = V.fromList [1..100]
     putStr "The element with the value of 10 is at the index "
     print (binarySearch arr 10 0 99)  -- Prints out 9

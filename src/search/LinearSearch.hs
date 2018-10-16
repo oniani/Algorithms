@@ -14,6 +14,7 @@ https://en.wikipedia.org/wiki/Linear_search
 
 module LinearSearch where
 
+import qualified Data.Vector as V
 
 
 -- NOTE: this implementation of the linear search is
@@ -23,15 +24,15 @@ module LinearSearch where
 -- the overall algorithmic complexity is still O(n).
 
 -- | Linear search
-linearSearch :: (Ord a) => [a] -> Int -> Int -> a -> Int
-linearSearch x l r i
-    | l > r = -1                                    -- Value is not in an element if leftmost > rightmost
-    | x !! l == i = l                               -- Base case 1: element at leftmost index
-    | x !! r == i = r                               -- Base case 2: element at rightmost index
-    | otherwise = linearSearch x (l + 1) (r - 1) i  -- Recursive case
+linearSearch :: (Ord a) => V.Vector a -> a -> Int -> Int -> Maybe Int
+linearSearch x i l r
+    | l > r = Nothing                               -- Value is not in an element if leftmost > rightmost
+    | x V.! l == i = Just l                         -- Base case 1: element at leftmost index
+    | x V.! r == i = Just r                         -- Base case 2: element at rightmost index
+    | otherwise = linearSearch x i (l + 1) (r - 1)  -- Recursive case
 
 
 main = do
-    let arr = [1..100]
+    let arr = V.fromList [1..100]
     putStr "The element with the value of 10 is at the index "
-    print (linearSearch arr 0 99 10)  -- Prints out 9
+    print (linearSearch arr 10 0 99)  -- Prints out 9

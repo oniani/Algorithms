@@ -17,6 +17,7 @@ _Searching algorithms_
 
 _Sorting algorithms_
 * [Bubble sort](https://github.com/oniani/haskalgs/blob/master/src/sort/BubbleSort.hs)
+* [Insertion sort](https://github.com/oniani/haskalgs/blob/master/src/sort/InsertionSort.hs)
 * [Merge sort](https://github.com/oniani/haskalgs/blob/master/src/sort/MergeSort.hs)
 * [Quicksort](https://github.com/oniani/haskalgs/blob/master/src/sort/Quicksort.hs)
 * [Selection Sort](https://github.com/oniani/haskalgs/blob/master/src/sort/SelectionSort.hs)

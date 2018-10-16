@@ -14,20 +14,23 @@ https://en.wikipedia.org/wiki/Binary_search_algorithm
 
 module BinarySearch where
 
+import qualified Data.Vector as V
+
 
 -- | Binary search
-binarySearch :: (Ord a) => [a] -> a -> Int -> Int -> Int
+binarySearch :: (Ord a) => V.Vector a -> a -> Int -> Int -> Maybe Int
 binarySearch x i l r
-    | l > r = -1                                   -- Check if left is greater than right
-    | x !! mid == i = mid                          -- Base case
-    | x !! mid > i = binarySearch x i l (mid - 1)  -- Left recursive case
-    | x !! mid < i = binarySearch x i (mid + 1) r  -- Right recursive case
-    | otherwise = -1
+    | l > r = Nothing                           -- Check if left is greater than right
+    | guess == i = Just mid                     -- Base case
+    | guess > i = binarySearch x i l (mid - 1)  -- Left recursive case
+    | guess < i = binarySearch x i (mid + 1) r  -- Right recursive case
+    | otherwise = Nothing
     where
         mid = quot (l + r) 2
+        guess = x V.! mid
 
 
 main = do
-    let arr = [1..100]
+    let arr = V.fromList [1..100]
     putStr "The element with the value of 10 is at the index "
     print (binarySearch arr 10 0 99)  -- Prints out 9

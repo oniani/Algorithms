@@ -12,7 +12,7 @@ For more information, follow the link below.
 https://en.wikipedia.org/wiki/Quicksort
 -}
 
-module Main where
+module Quicksort where
 
 
 -- | Quicksort
