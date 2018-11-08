@@ -18,17 +18,14 @@ import qualified Data.Vector as V
 import BinarySearch (binarySearch)
 
 
-exponentialSearch :: (Ord a) => V.Vector a -> a -> Int -> Maybe Int
-exponentialSearch x i s
-    | s == 0 = Nothing
-    | b >= s || x V.! b >= i = Just (multiplyByTwo b)
-    | otherwise = binarySearch x i (b `div` 2) (min (b + 1) s)
-    where
-        b = 1
-        multiplyByTwo b = 2 * b
+exponentialSearch :: (Ord a) => V.Vector a -> a -> Int -> Int -> Int
+exponentialSearch x i l r
+    | x V.! l == i = l
+    | (l + 1) <= r && x V.! (l + 1) < i = exponentialSearch x i (2 * (l + 1)) r
+    | otherwise = binarySearch x i ((l + 1) `div` 2) (min (l + 1) r)
 
 
 main = do
     let arr = V.fromList [1..100]
     putStr "The element with the value of 10 is at the index "
-    print (binarySearch arr 10 0 99)  -- Prints out 9
+    print (exponentialSearch arr 10 0 99)  -- Prints out 9

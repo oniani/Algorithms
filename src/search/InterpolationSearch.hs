@@ -18,16 +18,17 @@ import qualified Data.Vector as V
 
     
 -- | Interpolation search
-interpolationSearch :: V.Vector Int -> Int -> Int -> Int -> Maybe Int
+interpolationSearch :: V.Vector Int -> Int -> Int -> Int -> Int
 interpolationSearch x i l r
-    | l > r || i < x V.! l || i > x V.! r = Nothing
-    | guess == i = Just pos
+    | l > r || i < x V.! l || i > x V.! r = -1
+    | guess == i = pos
     | guess > i = interpolationSearch x i (l + 1) r
     | guess < i = interpolationSearch x i l (r - 1)
-    | otherwise = Nothing
+    | otherwise = -1
     where
         pos = l + (((r - l) `div` (x V.! r - x V.! l)) * (i - x V.! l))
         guess = x V.! pos
+
 
 main = do
     let arr = V.fromList [1..100]

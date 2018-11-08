@@ -18,13 +18,13 @@ import qualified Data.Vector as V
 
 
 -- | Binary search
-binarySearch :: (Ord a) => V.Vector a -> a -> Int -> Int -> Maybe Int
+binarySearch :: (Ord a) => V.Vector a -> a -> Int -> Int -> Int
 binarySearch x i l r
-    | l > r = Nothing                           -- Check if left is greater than right
-    | guess == i = Just mid                     -- Base case
+    | l > r = -1                                -- Check if left is greater than right
+    | guess == i = mid                          -- Base case
     | guess > i = binarySearch x i l (mid - 1)  -- Left recursive case
     | guess < i = binarySearch x i (mid + 1) r  -- Right recursive case
-    | otherwise = Nothing
+    | otherwise = -1
     where
         mid = quot (l + r) 2
         guess = x V.! mid

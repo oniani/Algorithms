@@ -24,11 +24,11 @@ import qualified Data.Vector as V
 -- the overall algorithmic complexity is still O(n).
 
 -- | Linear search
-linearSearch :: (Ord a) => V.Vector a -> a -> Int -> Int -> Maybe Int
+linearSearch :: (Ord a) => V.Vector a -> a -> Int -> Int -> Int
 linearSearch x i l r
-    | l > r = Nothing                               -- Value is not in an element if leftmost > rightmost
-    | x V.! l == i = Just l                         -- Base case 1: element at leftmost index
-    | x V.! r == i = Just r                         -- Base case 2: element at rightmost index
+    | l > r = -1                                    -- Value is not in an element if leftmost > rightmost
+    | x V.! l == i = l                              -- Base case 1: element at leftmost index
+    | x V.! r == i = r                              -- Base case 2: element at rightmost index
     | otherwise = linearSearch x i (l + 1) (r - 1)  -- Recursive case
 
 
