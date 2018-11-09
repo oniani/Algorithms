@@ -1,0 +1,29 @@
+{- |
+Module      :  BaseConverter.hs
+Description :  Module implements the base conversion algorithm
+Copyright   :  (c) David Oniani
+License     :  MIT
+
+Maintainer  :  onianidavid@gmail.com
+Stability   :  provisional
+Portability :  portable
+
+For more information, follow the link below.
+https://en.wikipedia.org/wiki/Change_of_base
+-}
+
+module BaseConverter where
+
+
+-- | A function that converts an integer to a string in any base
+baseConverter :: Int -> Int -> String
+baseConverter n b
+    | n < b = [s !! n]
+    | otherwise = baseConverter (div n b) b ++ [s !! mod n b]
+    where
+        s = "0123456789ABCDEF"
+
+
+main = do
+    putStr "The result of the conversion is "
+    print (baseConverter 3735928559 16)

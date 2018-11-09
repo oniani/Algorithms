@@ -26,13 +26,13 @@ import qualified Data.Vector as V
 -- | Linear search
 linearSearch :: (Ord a) => V.Vector a -> a -> Int -> Int -> Int
 linearSearch x i l r
-    | l > r = -1                                    -- Value is not in an element if leftmost > rightmost
-    | x V.! l == i = l                              -- Base case 1: element at leftmost index
-    | x V.! r == i = r                              -- Base case 2: element at rightmost index
-    | otherwise = linearSearch x i (l + 1) (r - 1)  -- Recursive case
+    | l > r = -1
+    | x V.! l == i = l
+    | x V.! r == i = r
+    | otherwise = linearSearch x i (l + 1) (r - 1)
 
 
 main = do
     let arr = V.fromList [1..100]
     putStr "The element with the value of 10 is at the index "
-    print (linearSearch arr 10 0 99)  -- Prints out 9
+    print (linearSearch arr 10 0 99)

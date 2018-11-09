@@ -20,10 +20,10 @@ import qualified Data.Vector as V
 -- | Binary search
 binarySearch :: (Ord a) => V.Vector a -> a -> Int -> Int -> Int
 binarySearch x i l r
-    | l > r = -1                                -- Check if left is greater than right
-    | guess == i = mid                          -- Base case
-    | guess > i = binarySearch x i l (mid - 1)  -- Left recursive case
-    | guess < i = binarySearch x i (mid + 1) r  -- Right recursive case
+    | l > r = -1
+    | guess == i = mid
+    | guess > i = binarySearch x i l (mid - 1)
+    | guess < i = binarySearch x i (mid + 1) r
     | otherwise = -1
     where
         mid = quot (l + r) 2
@@ -33,4 +33,4 @@ binarySearch x i l r
 main = do
     let arr = V.fromList [1..100]
     putStr "The element with the value of 10 is at the index "
-    print (binarySearch arr 10 0 99)  -- Prints out 9
+    print (binarySearch arr 10 0 99)

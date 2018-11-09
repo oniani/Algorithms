@@ -10,17 +10,24 @@ _One of the primary goals of the repository is to have minimal, yet complete, im
 
 ## Current implementations
 _Searching algorithms_
-* [Binary search](https://github.com/oniani/haskalgs/blob/master/src/search/BinarySearch.hs)
-* [Exponential search](https://github.com/oniani/haskalgs/blob/master/src/search/ExponentialSearch.hs)
-* [Interpolation search](https://github.com/oniani/haskalgs/blob/master/src/search/InterpolationSearch.hs)
-* [Linear search](https://github.com/oniani/haskalgs/blob/master/src/search/LinearSearch.hs)
+* [Binary search](https://github.com/oniani/haskalgs/blob/master/src/searching/BinarySearch.hs)
+* [Exponential search](https://github.com/oniani/haskalgs/blob/master/src/searching/ExponentialSearch.hs)
+* [Interpolation search](https://github.com/oniani/haskalgs/blob/master/src/searching/InterpolationSearch.hs)
+* [Linear search](https://github.com/oniani/haskalgs/blob/master/src/searching/LinearSearch.hs)
 
 _Sorting algorithms_
-* [Bubble sort](https://github.com/oniani/haskalgs/blob/master/src/sort/BubbleSort.hs)
-* [Insertion sort](https://github.com/oniani/haskalgs/blob/master/src/sort/InsertionSort.hs)
-* [Merge sort](https://github.com/oniani/haskalgs/blob/master/src/sort/MergeSort.hs)
-* [Quicksort](https://github.com/oniani/haskalgs/blob/master/src/sort/Quicksort.hs)
-* [Selection Sort](https://github.com/oniani/haskalgs/blob/master/src/sort/SelectionSort.hs)
+* [Bubble sort](https://github.com/oniani/haskalgs/blob/master/src/sorting/BubbleSort.hs)
+* [Insertion sort](https://github.com/oniani/haskalgs/blob/master/src/sorting/InsertionSort.hs)
+* [Merge sort](https://github.com/oniani/haskalgs/blob/master/src/sorting/MergeSort.hs)
+* [Quicksort](https://github.com/oniani/haskalgs/blob/master/src/sorting/Quicksort.hs)
+* [Selection Sort](https://github.com/oniani/haskalgs/blob/master/src/sorting/SelectionSort.hs)
+
+_Miscellaneous algorithms_
+* [Base Converter](https://github.com/oniani/haskalgs/blob/master/src/miscellaneous/BaseConverter.hs)
+* [Catalan Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/miscellaneous/CatalanGenerator.hs)
+* [Stern's Diatomic Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/miscellaneous/DiatomicGenerator.hs)
+* [Fibonacci Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/miscellaneous/FibonacciGenerator.hs)
+* [Prime Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/miscellaneous/PrimeGenerator.hs)
 
 
 It should be noted that current algorithms do not have accompanying [QuickCheck](http://hackage.haskell.org/package/QuickCheck) tests which are the must!  

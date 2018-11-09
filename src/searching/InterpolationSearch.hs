@@ -33,4 +33,4 @@ interpolationSearch x i l r
 main = do
     let arr = V.fromList [1..100]
     putStr "The element with the value of 10 is at the index "
-    print (interpolationSearch arr 10 0 99)  -- Prints out 9
+    print (interpolationSearch arr 10 0 99)
