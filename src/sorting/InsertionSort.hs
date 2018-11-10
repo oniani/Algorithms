@@ -20,11 +20,11 @@ insertionSort :: Ord a => [a] -> [a]
 insertionSort x
     | null x = []
     | otherwise = insert (head x) (insertionSort (tail x))
-        where
-            insert y [] = [y]
-            insert y (z:zs)
-                | y <= z = y : (z:zs)
-                | y > z = z : insert y zs
+    where
+        insert y [] = [y]
+        insert y (z:zs)
+            | y <= z = y : (z:zs)
+            | y > z = z : insert y zs
 
 
 main = do

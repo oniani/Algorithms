@@ -18,8 +18,8 @@ module Quicksort where
 -- | Quicksort
 quicksort :: (Ord a) => [a] -> [a]
 quicksort x
-    | length x < 2 = x                                            -- Base case
-    | otherwise = quicksort less ++ [pivot] ++ quicksort greater  -- Recursive case
+    | length x < 2 = x
+    | otherwise = quicksort less ++ [pivot] ++ quicksort greater
     where
         pivot = head x
         less = [i | i <- tail x, i <= pivot]

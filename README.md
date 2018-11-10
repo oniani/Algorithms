@@ -22,12 +22,16 @@ _Sorting algorithms_
 * [Quicksort](https://github.com/oniani/haskalgs/blob/master/src/sorting/Quicksort.hs)
 * [Selection Sort](https://github.com/oniani/haskalgs/blob/master/src/sorting/SelectionSort.hs)
 
+_Sequence generation algorithms_
+* [Calkin-Wilf Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/sequence-generation/CalkinWilfGenerator.hs)
+* [Catalan Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/sequence-generation/CatalanGenerator.hs)
+* [Collatz Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/sequence-generation/CollatzGenerator.hs)
+* [Stern's Diatomic Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/sequence-generation/DiatomicGenerator.hs)
+* [Fibonacci Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/sequence-generation/FibonacciGenerator.hs)
+* [Prime Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/sequence-generation/PrimeGenerator.hs)
+
 _Miscellaneous algorithms_
 * [Base Converter](https://github.com/oniani/haskalgs/blob/master/src/miscellaneous/BaseConverter.hs)
-* [Catalan Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/miscellaneous/CatalanGenerator.hs)
-* [Stern's Diatomic Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/miscellaneous/DiatomicGenerator.hs)
-* [Fibonacci Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/miscellaneous/FibonacciGenerator.hs)
-* [Prime Sequence Generator](https://github.com/oniani/haskalgs/blob/master/src/miscellaneous/PrimeGenerator.hs)
 
 
 It should be noted that current algorithms do not have accompanying [QuickCheck](http://hackage.haskell.org/package/QuickCheck) tests which are the must!  

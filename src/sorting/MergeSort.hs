@@ -15,14 +15,6 @@ https://en.wikipedia.org/wiki/Merge_sort
 module MergeSort where
 
 
--- | Helper function which takes two sorted arrays and merges them together
-merge :: (Ord a) => [a] -> [a] -> [a]
-merge x y
-    | null y = x
-    | null x = y
-    | head x < head y = head x : merge (tail x) y
-    | otherwise = head y : merge x (tail y)
-
 -- | Merge sort
 mergeSort :: (Ord a) => [a] -> [a]
 mergeSort x
@@ -31,6 +23,12 @@ mergeSort x
     where
         first = take (length x `div` 2) x
         last = drop (length x `div` 2) x
+        merge :: (Ord a) => [a] -> [a] -> [a]
+        merge x y
+            | null y = x
+            | null x = y
+            | head x < head y = head x : merge (tail x) y
+            | otherwise = head y : merge x (tail y)
 
 
 main = do
