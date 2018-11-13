@@ -30,5 +30,5 @@ calkinWilfGenerator n = take n [tuplify (calkinWilfHelper i 1 [1,1]) | i <- [1..
 
 
 main = do
-    putStr "The first [lazily evaluated] 100 elements of the Calkin-Wilf sequence sequence are "
+    putStr "The first 100 elements of the Calkin-Wilf sequence sequence are "
     print (calkinWilfGenerator 100)

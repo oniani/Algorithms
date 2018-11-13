@@ -24,5 +24,5 @@ fibonacciGenerator n = take n fiboHelper
 
 
 main = do
-    putStr "The first [lazily evaluated] 100 elements of the Fibonacci sequence are "
+    putStr "The first 100 elements of the Fibonacci sequence are "
     print (fibonacciGenerator 100)

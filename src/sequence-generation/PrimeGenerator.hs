@@ -42,9 +42,9 @@ primeGenerator n = take n primeHelper
                 1:p:x = [6 * k + r | k <- [0..], r <- [1,5]]
                 primes = p : filter isPrime x
                 isPrime n  = all (not . divisible n) (takeWhile (\p -> p * p <= n) primes)
-                divisible n p = mod n p == 0
+                divisible n p = rem n p == 0
 
 
 main = do
-    putStr "The first [lazily evaluated] 100 primes are "
+    putStr "The first 100 primes are "
     print (primeGenerator 100)

@@ -29,5 +29,5 @@ catalanGenerator n = take n catalanHelper
 
 
 main = do
-    putStr "The first [lazily evaluated] 100 elements of the Catalan sequence are "
+    putStr "The first 100 elements of the Catalan sequence are "
     print (catalanGenerator 100)

@@ -27,5 +27,5 @@ diatomicGenerator n = take n [diatomicHelper i | i <- [0..]]
 
 
 main = do
-    putStr "The first [lazily evaluated] 100 elements of the Stern's diatomic sequence are "
+    putStr "The first 100 elements of the Stern's diatomic sequence are "
     print (diatomicGenerator 100)
