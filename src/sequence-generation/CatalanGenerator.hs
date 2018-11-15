@@ -19,8 +19,8 @@ module CatalanGenerator where
 -- is a product of all the numbers of the type (n + k) / k where  1 < k < 2n + 1.
 
 -- | The Catalan sequence generator function
-catalanGenerator :: Int -> [Integer]
-catalanGenerator n = take n catalanHelper
+catalanGenerator :: Integer -> [Integer]
+catalanGenerator n = take (fromIntegral n) catalanHelper
     where
         catalanHelper :: [Integer]
         catalanHelper = map expr [0..]

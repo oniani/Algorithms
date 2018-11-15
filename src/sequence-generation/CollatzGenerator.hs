@@ -16,10 +16,10 @@ module CollatzGenerator where
 
 
 -- | The Collatz sequence generator function
-collatzGenerator :: Int -> [Int]
+collatzGenerator :: Integer -> [Integer]
 collatzGenerator n = collatzHelper n []
     where
-        collatzHelper :: Int -> [Int] -> [Int]
+        collatzHelper :: Integer -> [Integer] -> [Integer]
         collatzHelper n x
             | n == 1 = x ++ [n]
             | even n = collatzHelper (div n 2) (x ++ [n])

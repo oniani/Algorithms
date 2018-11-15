@@ -16,10 +16,10 @@ module DiatomicGenerator where
 
 
 -- | Stern's diatomic sequence generator function
-diatomicGenerator :: Int -> [Int]
-diatomicGenerator n = take n [diatomicHelper i | i <- [0..]]
+diatomicGenerator :: Integer -> [Integer]
+diatomicGenerator n = take (fromIntegral n) [diatomicHelper i | i <- [0..]]
     where
-        diatomicHelper :: Int -> Int
+        diatomicHelper :: Integer -> Integer
         diatomicHelper k
             | k < 2 = k
             | even k = diatomicHelper (div k 2)

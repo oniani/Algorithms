@@ -43,11 +43,13 @@ _Sorting algorithms_
 * [Selection Sort](https://github.com/oniani/algorithms/blob/master/src/sorting/SelectionSort.hs)
 
 _Sequence generation algorithms_
+* [Arithmetic Sequence Generator](https://github.com/oniani/algorithms/blob/master/src/sequence-generation/ArithmeticGenerator.hs)
 * [Calkin-Wilf Sequence Generator](https://github.com/oniani/algorithms/blob/master/src/sequence-generation/CalkinWilfGenerator.hs)
 * [Catalan Sequence Generator](https://github.com/oniani/algorithms/blob/master/src/sequence-generation/CatalanGenerator.hs)
 * [Collatz Sequence Generator](https://github.com/oniani/algorithms/blob/master/src/sequence-generation/CollatzGenerator.hs)
 * [Stern's Diatomic Sequence Generator](https://github.com/oniani/algorithms/blob/master/src/sequence-generation/DiatomicGenerator.hs)
 * [Fibonacci Sequence Generator](https://github.com/oniani/algorithms/blob/master/src/sequence-generation/FibonacciGenerator.hs)
+* [Geometric Sequence Generator](https://github.com/oniani/algorithms/blob/master/src/sequence-generation/GeometricGenerator.hs)
 * [Prime Sequence Generator](https://github.com/oniani/algorithms/blob/master/src/sequence-generation/PrimeGenerator.hs)
 
 _Miscellaneous algorithms_

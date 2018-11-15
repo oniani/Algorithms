@@ -19,11 +19,11 @@ module CalkinWilfGenerator where
 -- first element of the tuple is the numerator of the fraction with the second one being denominator.
 
 -- | Calkin-Wilf sequence generator function
-calkinWilfGenerator :: Int -> [(Int, Int)]
-calkinWilfGenerator n = take n [tuplify (calkinWilfHelper i 1 [1,1]) | i <- [1..]]
+calkinWilfGenerator :: Integer -> [(Integer, Integer)]
+calkinWilfGenerator n = take (fromIntegral n) [tuplify (calkinWilfHelper i 1 [1,1]) | i <- [1..]]
     where
         tuplify [i,j] = (i,j)
-        calkinWilfHelper :: Int -> Int -> [Int] -> [Int]
+        calkinWilfHelper :: Integer -> Integer -> [Integer] -> [Integer]
         calkinWilfHelper n m [i,j]
             | m == n = [i,j]
             | otherwise = calkinWilfHelper n (m + 1) [j,2 * div i j * j + j - i]

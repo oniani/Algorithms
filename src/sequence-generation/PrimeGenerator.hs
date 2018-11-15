@@ -33,8 +33,8 @@ module PrimeGenerator where
 -- representations for a prime number.
 
 -- | The prime sequence generator function
-primeGenerator :: Int -> [Integer]
-primeGenerator n = take n primeHelper
+primeGenerator :: Integer -> [Integer]
+primeGenerator n = take (fromIntegral n) primeHelper
     where
         primeHelper :: [Integer]
         primeHelper = 2:3:primes
