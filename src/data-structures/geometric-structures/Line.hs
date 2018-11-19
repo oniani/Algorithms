@@ -19,6 +19,7 @@ module Line
     , findSlope
     , findFunction
     , isParallel
+    , isPerpendicular
     , intersect
     ) where
 
@@ -31,22 +32,22 @@ newtype Line = Line [Point] deriving (Eq, Show)
 findInitialValue :: Line -> Double
 findInitialValue (Line [Point (x1,y1), Point (x2,y2)]) = (y1 * x2 - y2 * x1) / (x2 - x1)
 
--- -- | Find a the slope of the linear function
+-- | Find a the slope of the linear function
 findSlope :: Line -> Double
 findSlope (Line [Point (x1,y1), Point (x2,y2)]) = (y2 - y1) / (x2 - x1)
 
--- -- | Finds a linear function which goes through the given line
+-- | Finds a linear function which goes through the given line
 findFunction :: Line -> String
 findFunction (Line a) = "f(x) = " ++ show k ++ "x + " ++ show b
     where
         b = findInitialValue (Line a)
         k = findSlope (Line a)
 
--- -- | Checks if two lines are parallel to each other
+-- | Checks if two lines are parallel to each other
 isParallel :: Line -> Line -> Bool
 isParallel (Line a) (Line b) = findSlope (Line a) == findSlope (Line b)
 
--- -- | Checks if two lines intersect each other and returns the intersection point if they do
+-- | Checks if two lines intersect each other and returns the intersection point if they do
 intersect :: Line -> Line -> Maybe Point
 intersect (Line a) (Line b)
     | findSlope (Line a) == findSlope (Line b) = Nothing
@@ -58,11 +59,18 @@ intersect (Line a) (Line b)
         v4 = findInitialValue (Line a) * findInitialValue (Line a)
         v5 = v3 - v4
 
+-- | Returns true if two lines are perpendicular and false if not
+isPerpendicular :: Line -> Line -> Bool
+isPerpendicular (Line a) (Line b)
+    | findSlope (Line a) * findSlope (Line b) == -1 = True
+    | otherwise = False
+
 
 main = do
     let line1 = Line [Point (2, 4.5), Point (4, 8)]
     let line2 = Line [Point (1, 1), Point (2, 2)]
     let line3 = Line [Point (1, 4), Point (-3, 0)]
+    let line4 = Line [Point (0, 0), Point (-1, 1)]
 
     print (findInitialValue line1)
     print (findSlope line1)
@@ -83,3 +91,6 @@ main = do
     print (line1 `intersect` line2)
     print (line2 `intersect` line3)
     print (line1 `intersect` line3)
+    putStr "\n"
+    print (isPerpendicular line1 line2)
+    print (isPerpendicular line2 line4)

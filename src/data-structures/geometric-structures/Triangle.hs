@@ -35,11 +35,7 @@ module Triangle
     ) where
 
 
-data Triangle = Triangle
-    { a :: Double
-    , b :: Double
-    , c :: Double
-    } deriving (Eq)
+data Triangle = Triangle Double Double Double deriving (Eq)
 
 
 -- | Show the triangle
@@ -195,9 +191,10 @@ angles (Triangle a b c)
 -- | Display all the information about the triangle
 info :: Triangle -> IO()
 info (Triangle a b c)
-    | triangleExists tri = putStr (sta ++ des ++ end ++ per ++ 
-                                   are ++ bis ++ hei ++ med ++
-                                   inr ++ cir ++ exr ++ sns ++
+    | triangleExists tri = putStr (sta ++ des ++ end ++
+                                   per ++ are ++ bis ++
+                                   hei ++ med ++ inr ++
+                                   cir ++ exr ++ sns ++
                                    css ++ agr ++ agd)
     where
         tri = Triangle a b c
@@ -216,3 +213,8 @@ info (Triangle a b c)
         css = "Cosines:            " ++ format     (cosines                    tri) "cos <BAC" "cos <ABC" "cos <ACB" ++ "\n"
         agr = "Angles (radians):   " ++ format     (angles                     tri) "< BAC" "< ABC" "< ACB"          ++ "\n"
         agd = "Angles (degrees):   " ++ format     (toDegreesTriangle $ angles tri) "< BAC" "< ABC" "< ACB"          ++ "\n"
+
+
+main = do
+    let triangle = Triangle 3 4 5
+    info triangle

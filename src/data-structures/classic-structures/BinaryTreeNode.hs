@@ -22,9 +22,11 @@ module BinaryTreeNode
     , getRight
     , setLeft
     , setRight
+    , getChildrenNumber
+    , isNullNode
     ) where
 
-data TreeNode = NULL | TreeNode (Integer, TreeNode, TreeNode) deriving (Eq, Show)
+data TreeNode = NULL | TreeNode Integer TreeNode TreeNode deriving (Eq, Show)
 
 
 -- | Create the NULL node : O(1) complexity
@@ -33,33 +35,45 @@ nullNode = NULL
 
 -- | Create the new node : O(1) complexity
 newNode :: Integer -> TreeNode
-newNode value = TreeNode (value, NULL, NULL)
+newNode nodeValue = TreeNode nodeValue NULL NULL
 
 -- | Get the value of the given node : O(1) complexity
 getValue :: TreeNode -> Integer
 getValue NULL = error "Cannot get the value of the NULL node!"
-getValue (TreeNode (value, leftChild, rightChild)) = value
+getValue (TreeNode nodeValue leftChild rightChild) = nodeValue
 
 -- | Set the value of the given node : O(1) complexity
 setValue :: TreeNode -> Integer -> TreeNode
-setValue NULL value = TreeNode (value, NULL, NULL)
-setValue (TreeNode (value, leftChild, rightChild)) newValue = TreeNode (newValue, leftChild, rightChild)
+setValue NULL nodeValue = TreeNode nodeValue NULL NULL
+setValue (TreeNode nodeValue leftChild rightChild) newValue = TreeNode newValue leftChild rightChild
 
 -- | Get the left child of the node : O(1) complexity
 getLeft :: TreeNode -> TreeNode
-getLeft (TreeNode (value, leftChild, rightChild)) = leftChild
+getLeft (TreeNode nodeValue leftChild rightChild) = leftChild
 
 -- | Get the right child of the node : O(1) complexity
 getRight :: TreeNode -> TreeNode
-getRight (TreeNode (value, leftChild, rightChild)) = rightChild
+getRight (TreeNode nodeValue leftChild rightChild) = rightChild
 
 -- | Change the value of the left child of the node : O(1) complexity
 setLeft :: TreeNode -> Integer -> TreeNode
-setLeft (TreeNode (value, leftChild, rightChild)) newValue = TreeNode (value, setValue leftChild newValue, rightChild)
+setLeft (TreeNode nodeValue leftChild rightChild) newValue = TreeNode nodeValue (setValue leftChild newValue) rightChild
 
 -- | Change the value of the right child of the node : O(1) complexity
 setRight :: TreeNode -> Integer -> TreeNode
-setRight (TreeNode (value, leftChild, rightChild)) newValue = TreeNode (value, leftChild, setValue rightChild newValue)
+setRight (TreeNode nodeValue leftChild rightChild) newValue = TreeNode nodeValue leftChild (setValue rightChild newValue)
+
+-- | Get the number of the children of the given node : O(1) comlexity
+getChildrenNumber :: TreeNode -> Integer
+getChildrenNumber (TreeNode nodeValue leftChild rightChild)
+    | leftChild == NULL && rightChild == NULL = 0
+    | leftChild == NULL || rightChild == NULL = 1
+    | otherwise = 2
+
+-- | Check if the given node is a null node
+isNullNode :: TreeNode -> Bool
+isNullNode NULL = True
+isNullNode _ = False
 
 
 main = do
@@ -76,5 +90,20 @@ main = do
     print node3
     let node4 = setRight node3 15
     print node4
+    putStr "\n"
     print (node1 == node2)
     print (node1 == node1)
+    putStr "\n"
+    print node1
+    print node2
+    print node3
+    print node4
+    putStr "\n"
+    print (getChildrenNumber node1)
+    print (getChildrenNumber node2)
+    print (getChildrenNumber node3)
+    print (getChildrenNumber node4)
+    putStr "\n"
+    print (isNullNode nullNode)
+    print (isNullNode node1)
+    print (isNullNode node3)

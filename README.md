@@ -10,34 +10,19 @@ can be treated as variables which opens up a whole new world of algorithms and d
 ## Current implementations
 
 ### Data Structures
-* [Stack](https://github.com/oniani/purity/blob/master/src/data-structures/Stack.hs)
-* [Queue](https://github.com/oniani/purity/blob/master/src/data-structures/Queue.hs)
-* [Binary tree node](https://github.com/oniani/purity/blob/master/src/data-structures/BinaryTreeNode.hs)
+
+_Classic data structures_
+* [Binary search tree](https://github.com/oniani/purity/blob/master/src/data-structures/classic-structures/BinarySearchTree.hs)
+* [Binary tree node](https://github.com/oniani/purity/blob/master/src/data-structures/classic-structures/BinaryTreeNode.hs)
+* [Queue](https://github.com/oniani/purity/blob/master/src/data-structures/classic-structures/Queue.hs)
+* [Stack](https://github.com/oniani/purity/blob/master/src/data-structures/classic-structures/Stack.hs)
+
+_Geometric data structures_
+* [Line](https://github.com/oniani/purity/blob/master/src/data-structures/geometric-structures/Line.hs)
+* [Triangle](https://github.com/oniani/purity/blob/master/src/data-structures/geometric-structures/Triangle.hs)
 
 
 ### Algorithms
-
-_Geometric algorithms_
-* [Line Algorithms](https://github.com/oniani/purity/blob/master/src/algorithms/geometry/Line.hs)
-    * Initial value
-    * Slope
-    * Function generation
-    * Parallelism
-    * Intersection
-* [Triangle algorithms](https://github.com/oniani/purity/blob/master/src/algorithms/geometry/Triangle.hs)
-    * Existence
-    * Perimeter
-    * Area
-    * Bisectors
-    * Heights
-    * Medians
-    * Inradius
-    * Circumradius
-    * Exradii
-    * Sines
-    * Cosines
-    * Angles (degrees)
-    * Angles (radians)
 
 _Searching algorithms_
 * [Binary search](https://github.com/oniani/purity/blob/master/src/algorithms/searching/BinarySearch.hs)
@@ -66,4 +51,4 @@ _Miscellaneous algorithms_
 * [Base Converter](https://github.com/oniani/purity/blob/master/src/algorithms/miscellaneous/BaseConverter.hs)
 
 ## License
-[MIT](https://github.com/oniani/algorithms/blob/master/LICENSE)
+[MIT](https://github.com/oniani/purity/blob/master/LICENSE)
