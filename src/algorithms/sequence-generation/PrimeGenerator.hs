@@ -34,10 +34,10 @@ module PrimeGenerator where
 
 -- | The prime sequence generator function
 primeGenerator :: Integer -> [Integer]
-primeGenerator n = take (fromIntegral n) primeHelper
+primeGenerator n = take (fromIntegral n) primeGenerator'
     where
-        primeHelper :: [Integer]
-        primeHelper = 2:3:primes
+        primeGenerator' :: [Integer]
+        primeGenerator' = 2:3:primes
             where
                 1:p:x = [6 * k + r | k <- [0..], r <- [1,5]]
                 primes = p : filter isPrime x

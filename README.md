@@ -11,11 +11,12 @@ can be treated as variables which opens up a whole new world of algorithms and d
 
 ### Data Structures
 
-_Classic data structures_
-* [Binary search tree](https://github.com/oniani/purity/blob/master/src/data-structures/classic-structures/BinarySearchTree.hs)
-* [Binary tree node](https://github.com/oniani/purity/blob/master/src/data-structures/classic-structures/BinaryTreeNode.hs)
-* [Queue](https://github.com/oniani/purity/blob/master/src/data-structures/classic-structures/Queue.hs)
-* [Stack](https://github.com/oniani/purity/blob/master/src/data-structures/classic-structures/Stack.hs)
+_Basic data structures_
+* [Binary search tree](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/BinarySearchTree.hs)
+* [Binary tree](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/BinaryTree.hs)
+* [Linked List](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/LinkedList.hs)
+* [Queue](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/Queue.hs)
+* [Stack](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/Stack.hs)
 
 _Geometric data structures_
 * [Line](https://github.com/oniani/purity/blob/master/src/data-structures/geometric-structures/Line.hs)

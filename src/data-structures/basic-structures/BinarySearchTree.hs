@@ -18,6 +18,7 @@ module BinarySearchTree
     , preorderTraversal
     , inorderTraversal
     , postorderTraversal
+    , treeHeight
     , searchNode
     , fromList
     , getLeftmostNode
@@ -26,75 +27,82 @@ module BinarySearchTree
     , isNullTree
     ) where
 
-import BinaryTreeNode
+data BinarySearchTree = NULL | BinarySearchTree Integer BinarySearchTree BinarySearchTree deriving (Eq, Show)
 
 
 -- | Initialize the root of the binary search tree
-rootInitialize :: TreeNode
+rootInitialize :: BinarySearchTree
 rootInitialize = NULL
 
 -- | Insert a node into the binary search tree
-insertNode :: TreeNode -> Integer -> TreeNode
-insertNode NULL insertValue = newNode insertValue
-insertNode (TreeNode nodeValue leftChild rightChild) insertValue
-    | nodeValue > insertValue = TreeNode nodeValue (insertNode leftChild insertValue) rightChild
-    | nodeValue < insertValue = TreeNode nodeValue leftChild (insertNode rightChild insertValue)
+insertNode :: BinarySearchTree -> Integer -> BinarySearchTree
+insertNode NULL insertValue = BinarySearchTree insertValue NULL NULL
+insertNode (BinarySearchTree nodeValue leftChild rightChild) insertValue
+    | nodeValue > insertValue = BinarySearchTree nodeValue (insertNode leftChild insertValue) rightChild
+    | nodeValue < insertValue = BinarySearchTree nodeValue leftChild (insertNode rightChild insertValue)
     | otherwise = error "Binary search tree does not allow duplicates!"
 
 -- | The preorder traversal of the binary search tree
-preorderTraversal :: TreeNode -> [Integer]
+preorderTraversal :: BinarySearchTree -> [Integer]
 preorderTraversal NULL = []
-preorderTraversal (TreeNode nodeValue leftChild rightChild) = [nodeValue] ++ preorderTraversal leftChild ++ preorderTraversal rightChild
+preorderTraversal (BinarySearchTree nodeValue leftChild rightChild) = [nodeValue] ++ preorderTraversal leftChild ++ preorderTraversal rightChild
 
 -- | The inorder traversal of the binary search tree
-inorderTraversal :: TreeNode -> [Integer]
+inorderTraversal :: BinarySearchTree -> [Integer]
 inorderTraversal NULL = []
-inorderTraversal (TreeNode nodeValue leftChild rightChild) = inorderTraversal leftChild ++ [nodeValue] ++ inorderTraversal rightChild
+inorderTraversal (BinarySearchTree nodeValue leftChild rightChild) = inorderTraversal leftChild ++ [nodeValue] ++ inorderTraversal rightChild
 
 -- | The postorder traversal of the binary search tree
-postorderTraversal :: TreeNode -> [Integer]
+postorderTraversal :: BinarySearchTree -> [Integer]
 postorderTraversal NULL = []
-postorderTraversal (TreeNode nodeValue leftChild rightChild) = postorderTraversal leftChild ++ postorderTraversal rightChild ++ [nodeValue]
+postorderTraversal (BinarySearchTree nodeValue leftChild rightChild) = postorderTraversal leftChild ++ postorderTraversal rightChild ++ [nodeValue]
+
+-- | Find the height of the binary search tree 
+-- NOTE 1: NULL means that there is no node and its height is -1
+-- NOTE 2: NOTE 1 is due to the fact that BST the root node only has the height of 0
+treeHeight :: BinarySearchTree -> Integer
+treeHeight NULL = -1
+treeHeight (BinarySearchTree nodeValue leftChild rightChild) = max (treeHeight leftChild + 1) (treeHeight rightChild + 1)
 
 -- | Check if the node is in the binary search tree
-searchNode :: TreeNode -> Integer -> Bool
+searchNode :: BinarySearchTree -> Integer -> Bool
 searchNode NULL _ = False
-searchNode (TreeNode nodeValue leftChild rightChild) searchValue
+searchNode (BinarySearchTree nodeValue leftChild rightChild) searchValue
     | nodeValue == searchValue = True
     | nodeValue > searchValue = searchNode leftChild searchValue
     | nodeValue < searchValue = searchNode rightChild searchValue
 
 -- | Get the leftmost node of the binary search tree
-getLeftmostNode :: TreeNode -> Integer
-getLeftmostNode (TreeNode nodeValue NULL rightChild) = nodeValue
-getLeftmostNode (TreeNode nodeValue leftChild rightChild) = getLeftmostNode leftChild
+getLeftmostNode :: BinarySearchTree -> Integer
+getLeftmostNode (BinarySearchTree nodeValue NULL rightChild) = nodeValue
+getLeftmostNode (BinarySearchTree nodeValue leftChild rightChild) = getLeftmostNode leftChild
 
 -- | Get the rightmost node of the binary search tree
-getRightmostNode :: TreeNode -> Integer
-getRightmostNode (TreeNode nodeValue leftChild NULL) = nodeValue
-getRightmostNode (TreeNode nodeValue leftChild rightChild) = getRightmostNode rightChild
+getRightmostNode :: BinarySearchTree -> Integer
+getRightmostNode (BinarySearchTree nodeValue leftChild NULL) = nodeValue
+getRightmostNode (BinarySearchTree nodeValue leftChild rightChild) = getRightmostNode rightChild
 
 -- | Delete a node of the binary search tree
-deleteNode :: TreeNode -> Integer -> TreeNode
+deleteNode :: BinarySearchTree -> Integer -> BinarySearchTree
 deleteNode NULL _ = NULL
-deleteNode (TreeNode nodeValue leftChild rightChild) deleteValue
-    | nodeValue > deleteValue = TreeNode nodeValue (deleteNode leftChild deleteValue) rightChild
-    | nodeValue < deleteValue = TreeNode nodeValue leftChild (deleteNode rightChild deleteValue)
+deleteNode (BinarySearchTree nodeValue leftChild rightChild) deleteValue
+    | nodeValue > deleteValue = BinarySearchTree nodeValue (deleteNode leftChild deleteValue) rightChild
+    | nodeValue < deleteValue = BinarySearchTree nodeValue leftChild (deleteNode rightChild deleteValue)
     | nodeValue == deleteValue && leftChild == NULL && rightChild == NULL = NULL
     | nodeValue == deleteValue && leftChild == NULL = rightChild
     | nodeValue == deleteValue && rightChild == NULL = leftChild
-    | otherwise = TreeNode (getLeftmostNode rightChild) leftChild (deleteNode rightChild (getLeftmostNode rightChild))
+    | otherwise = BinarySearchTree (getLeftmostNode rightChild) leftChild (deleteNode rightChild (getLeftmostNode rightChild))
 
 -- | Build a binary search tree from a list of integers
-fromList :: [Integer] -> TreeNode
-fromList [] = nullNode
-fromList (x:xs) = fromListHelper (TreeNode x NULL NULL) xs
+fromList :: [Integer] -> BinarySearchTree
+fromList [] = NULL
+fromList (x:xs) = fromList' (BinarySearchTree x NULL NULL) xs
     where
-        fromListHelper y [] = y
-        fromListHelper y xs = foldl insertNode y xs
+        fromList' y [] = y
+        fromList' y xs = foldl insertNode y xs
 
 -- | Check if the tree is empty
-isNullTree :: TreeNode -> Bool
+isNullTree :: BinarySearchTree -> Bool
 isNullTree NULL = True
 isNullTree _ = False
 
@@ -115,6 +123,12 @@ main = do
     print (preorderTraversal bst4)
     print (inorderTraversal bst4)
     print (postorderTraversal bst4)
+    putStr "\n"
+    putStrLn "Find the height of the tree..."
+    print (treeHeight bst1)
+    print (treeHeight bst2)
+    print (treeHeight bst3)
+    print (treeHeight bst4)
     putStr "\n"
     putStrLn "Node existence"
     print (searchNode bst1 1)
@@ -155,6 +169,6 @@ main = do
     print (deleteNode bst5 10)
     putStr "\n"
     putStrLn "Checking the emptiness of the binary search tree"
-    print (isNullTree nullNode)
+    print (isNullTree rootInitialize)
     print (isNullTree bst1)
     print (isNullTree bst2)

@@ -17,13 +17,13 @@ module CollatzGenerator where
 
 -- | The Collatz sequence generator function
 collatzGenerator :: Integer -> [Integer]
-collatzGenerator n = collatzHelper n []
+collatzGenerator n = collatzGenerator' n []
     where
-        collatzHelper :: Integer -> [Integer] -> [Integer]
-        collatzHelper n x
+        collatzGenerator' :: Integer -> [Integer] -> [Integer]
+        collatzGenerator' n x
             | n == 1 = x ++ [n]
-            | even n = collatzHelper (div n 2) (x ++ [n])
-            | odd n = collatzHelper (3 * n + 1) (x ++ [n])
+            | even n = collatzGenerator' (div n 2) (x ++ [n])
+            | odd n = collatzGenerator' (3 * n + 1) (x ++ [n])
 
 
 main = do

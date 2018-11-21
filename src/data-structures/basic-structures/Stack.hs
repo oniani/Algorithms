@@ -32,35 +32,35 @@ instance Show Stack
         show (Stack x) = "Stack " ++ drop 9 (show x)
 
 
--- | Create the empty stack : O(1) complexity
+-- | Create the empty stack
 empty :: Stack
 empty = Stack S.empty
 
--- | Get the size of the stack : O(1) complexity
+-- | Get the size of the stack
 size :: Stack -> Int
 size (Stack x) = S.length x
 
--- | Push the item onto the stack : O(1) complexity
+-- | Push the item onto the stack
 push :: Stack -> Integer -> Stack
 push (Stack x) y = Stack (x S.|> y)
 
--- | Get the top of the stack : O(1) complexity
+-- | Get the top of the stack
 top :: Stack -> Integer
 top (Stack x)
     | S.null x = error "Cannot get the top of the empty stack!"
     | otherwise = S.index x (length x - 1)
 
--- | Pop the item from the the stack : O(1) complexity
+-- | Pop the item from the the stack
 pop :: Stack -> Stack
 pop (Stack x)
     | S.null x = error "Cannot pop the empty stack!"
     | otherwise = Stack (S.deleteAt (length x - 1) x)
 
--- | Clear the stack : O(1) complexity
+-- | Clear the stack
 clear :: Stack -> Stack
 clear (Stack x) = Stack S.empty
 
--- | Check if the stack is empty : O(1) complexity
+-- | Check if the stack is empty
 null :: Stack -> Bool
 null (Stack x) = S.null x
 

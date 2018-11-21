@@ -16,7 +16,7 @@ module Queue
     ( Queue (..)
     , empty
     , enqueue
-    , bottom
+    , top
     , dequeue
     , clear
     , Queue.null
@@ -32,35 +32,35 @@ instance Show Queue
         show (Queue x) = "Queue " ++ drop 9 (show x)
 
 
--- | Create the empty queue : O(1) complexity
+-- | Create the empty queue
 empty :: Queue
 empty = Queue S.empty
 
--- | Get the size of the queue : O(1) complexity
+-- | Get the size of the queue
 size :: Queue -> Int
 size (Queue x) = S.length x
 
--- | Push the item onto the queue : O(1) complexity
+-- | Push the item onto the queue
 enqueue :: Queue -> Integer -> Queue
 enqueue (Queue x) y = Queue (y S.<| x)
 
--- | Get the bottom of the queue : O(1) complexity
-bottom :: Queue -> Integer
-bottom (Queue x)
-    | S.null x = error "Cannot get the bottom of the empty queue!"
+-- | Get the top of the queue
+top :: Queue -> Integer
+top (Queue x)
+    | S.null x = error "Cannot get the top of the empty queue!"
     | otherwise = S.index x 0
 
--- | Pop the item from the the queue : O(1) complexity
+-- | Pop the item from the the queue
 dequeue :: Queue -> Queue
 dequeue (Queue x)
     | S.null x = error "Cannot dequeue the empty queue!"
     | otherwise = Queue (S.deleteAt 0 x)
 
--- | Clear the queue : O(1) complexity
+-- | Clear the queue
 clear :: Queue -> Queue
 clear (Queue x) = Queue S.empty
 
--- | Check if the queue is empty : O(1) complexity
+-- | Check if the queue is empty
 null :: Queue -> Bool
 null (Queue x) = S.null x
 
@@ -81,10 +81,10 @@ main = do
     print (size queue3)
     print (size queue4)
     putStr "\n"
-    print (bottom queue1)
-    print (bottom queue2)
-    print (bottom queue3)
-    -- print (bottom queue4)  -- Error: Cannot get the top of the empty queue!
+    print (top queue1)
+    print (top queue2)
+    print (top queue3)
+    -- print (top queue4)  -- Error: Cannot get the top of the empty queue!
     putStr "\n"
     print (Queue.null queue1)
     print (Queue.null queue2)

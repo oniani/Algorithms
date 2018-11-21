@@ -17,10 +17,10 @@ module FibonacciGenerator where
 
 -- | A classic Haskell implementation of the Fibonacci sequence generator
 fibonacciGenerator :: Integer -> [Integer]
-fibonacciGenerator n = take (fromIntegral n) fiboHelper
+fibonacciGenerator n = take (fromIntegral n) fibonacciGenerator'
     where
-        fiboHelper :: [Integer]
-        fiboHelper = 0 : 1 : zipWith (+) fiboHelper (tail fiboHelper)
+        fibonacciGenerator' :: [Integer]
+        fibonacciGenerator' = 0 : 1 : zipWith (+) fibonacciGenerator' (tail fibonacciGenerator')
 
 
 main = do

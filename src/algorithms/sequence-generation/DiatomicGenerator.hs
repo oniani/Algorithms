@@ -17,13 +17,13 @@ module DiatomicGenerator where
 
 -- | Stern's diatomic sequence generator function
 diatomicGenerator :: Integer -> [Integer]
-diatomicGenerator n = take (fromIntegral n) [diatomicHelper i | i <- [0..]]
+diatomicGenerator n = take (fromIntegral n) [diatomicGenerator' i | i <- [0..]]
     where
-        diatomicHelper :: Integer -> Integer
-        diatomicHelper k
+        diatomicGenerator' :: Integer -> Integer
+        diatomicGenerator' k
             | k < 2 = k
-            | even k = diatomicHelper (div k 2)
-            | odd k = diatomicHelper (div (k - 1) 2) + diatomicHelper (div (k + 1) 2)
+            | even k = diatomicGenerator' (div k 2)
+            | odd k = diatomicGenerator' (div (k - 1) 2) + diatomicGenerator' (div (k + 1) 2)
 
 
 main = do
