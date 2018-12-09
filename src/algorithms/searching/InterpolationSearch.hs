@@ -14,23 +14,23 @@ https://en.wikipedia.org/wiki/Interpolation_search
 
 module InterpolationSearch where
 
-import qualified Data.Vector as V
+import Data.Vector (Vector, (!), fromList)
 
     
 -- | Interpolation search
-interpolationSearch :: V.Vector Int -> Int -> Int -> Int -> Int
+interpolationSearch :: Vector Integer -> Integer -> Integer -> Integer -> Integer
 interpolationSearch x i l r
-    | l > r || i < x V.! l || i > x V.! r = -1
+    | l > r || i < x ! fromInteger l || i > x ! fromInteger r = -1
     | guess == i = pos
     | guess > i = interpolationSearch x i (l + 1) r
     | guess < i = interpolationSearch x i l (r - 1)
     | otherwise = -1
     where
-        pos = l + (((r - l) `div` (x V.! r - x V.! l)) * (i - x V.! l))
-        guess = x V.! pos
+        pos = l + (((r - l) `div` (x ! fromInteger r - x ! fromInteger l)) * (i - x ! fromInteger l))
+        guess = x ! fromInteger pos
 
 
 main = do
-    let arr = V.fromList [1..100]
+    let arr = fromList [1..100]
     putStr "The element with the value of 10 is at the index "
     print (interpolationSearch arr 10 0 99)

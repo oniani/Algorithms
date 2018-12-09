@@ -17,7 +17,7 @@ module DiatomicGenerator where
 
 -- | Stern's diatomic sequence generator function
 diatomicGenerator :: Integer -> [Integer]
-diatomicGenerator n = take (fromIntegral n) [diatomicGenerator' i | i <- [0..]]
+diatomicGenerator n = take (fromInteger n) [diatomicGenerator' i | i <- [0..]]
     where
         diatomicGenerator' :: Integer -> Integer
         diatomicGenerator' k

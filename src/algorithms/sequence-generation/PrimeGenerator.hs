@@ -34,15 +34,12 @@ module PrimeGenerator where
 
 -- | The prime sequence generator function
 primeGenerator :: Integer -> [Integer]
-primeGenerator n = take (fromIntegral n) primeGenerator'
+primeGenerator n = take (fromInteger n) (2:3:primes)
     where
-        primeGenerator' :: [Integer]
-        primeGenerator' = 2:3:primes
-            where
-                1:p:x = [6 * k + r | k <- [0..], r <- [1,5]]
-                primes = p : filter isPrime x
-                isPrime n  = all (not . divisible n) (takeWhile (\p -> p * p <= n) primes)
-                divisible n p = rem n p == 0
+        1:p:x = [6 * k + r | k <- [0..], r <- [1,5]]
+        primes = p:filter isPrime x
+        isPrime n = all (not . divisible n) (takeWhile (\ p -> p * p <= n) primes)
+        divisible n p = rem n p == 0
 
 
 main = do

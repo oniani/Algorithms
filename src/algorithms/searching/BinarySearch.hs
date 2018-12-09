@@ -14,11 +14,11 @@ https://en.wikipedia.org/wiki/Binary_search_algorithm
 
 module BinarySearch where
 
-import qualified Data.Vector as V
+import Data.Vector (Vector, (!), fromList)
 
 
 -- | Binary search
-binarySearch :: (Ord a) => V.Vector a -> a -> Int -> Int -> Int
+binarySearch :: (Ord a) => Vector a -> a -> Integer -> Integer -> Integer
 binarySearch x i l r
     | l > r = -1
     | guess == i = mid
@@ -27,10 +27,10 @@ binarySearch x i l r
     | otherwise = -1
     where
         mid = quot (l + r) 2
-        guess = x V.! mid
+        guess = x ! fromInteger mid
 
 
 main = do
-    let arr = V.fromList [1..100]
+    let arr = fromList [1..100]
     putStr "The element with the value of 10 is at the index "
     print (binarySearch arr 10 0 99)

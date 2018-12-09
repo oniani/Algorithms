@@ -17,7 +17,7 @@ module FibonacciGenerator where
 
 -- | A classic Haskell implementation of the Fibonacci sequence generator
 fibonacciGenerator :: Integer -> [Integer]
-fibonacciGenerator n = take (fromIntegral n) fibonacciGenerator'
+fibonacciGenerator n = take (fromInteger n) fibonacciGenerator'
     where
         fibonacciGenerator' :: [Integer]
         fibonacciGenerator' = 0 : 1 : zipWith (+) fibonacciGenerator' (tail fibonacciGenerator')

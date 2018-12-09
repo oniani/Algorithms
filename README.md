@@ -1,11 +1,10 @@
-# Algorithms
+# Purity
 
-This repository has the implementations of various algorithms and data structures which range from basic to advanced and all are implemented in [Haskell](https://www.haskell.org/). Obviously, most, if not all, algorithms and data structures use recursion in some way. As of now, the primary goal of the repository is to have a curated list of high-performance implementations of the well-known and lesser-known algorithms
-and data structures.
+This repository has the implementations of various algorithms and data structures for the everyday use. Everything is implemented in [Haskell](https://www.haskell.org/). Obviously, most, if not all, algorithms and data structures use recursion in some way. The primary goal of the repository is to have a collection of high-performance and, preferably, minimal implementations algorithms and data structures.
 
 ### Why Haskell?
-Haskell allows us to embrace the beautiful ideas of function reusability and complexity creation. In other words, functions
-can be treated as variables which opens up a whole new world of algorithms and data structures. By treating the functions as the first class citizens, Haskell evangelizes the idea of breaking down a problem into simple steps and dealing with the smaller sub-problems making the problem-solving a lot more efficient. Besides, its lazy evaluation makes the algorithms extremely fast by not computing the values which are not going to be used.
+Haskell allows us to embrace the beautiful ideas of function reusability and complexity management. In other words, functions
+can be treated as variables which opens up a whole new world of algorithms and data structures. By treating the functions as the first class citizens, Haskell evangelizes the idea of breaking down a problem into simple steps and dealing with the smaller subproblems making the problem-solving a lot more efficient. Besides, its lazy evaluation makes the algorithms extremely fast by not computing the values which are not going to be used.
 
 ## Current implementations
 
@@ -32,11 +31,14 @@ _Searching algorithms_
 * [Linear search](https://github.com/oniani/purity/blob/master/src/algorithms/searching/LinearSearch.hs)
 
 _Sorting algorithms_
+* [Bogosort (DO NOT RUN ON YOUR MACHINE! If interested, just look at the implementation)](https://github.com/oniani/purity/blob/master/src/algorithms/sorting/Bogosort.hs)
 * [Bubble sort](https://github.com/oniani/purity/blob/master/src/algorithms/sorting/BubbleSort.hs)
+* [Counting sort](https://github.com/oniani/purity/blob/master/src/algorithms/sorting/CountingSort.hs)
 * [Insertion sort](https://github.com/oniani/purity/blob/master/src/algorithms/sorting/InsertionSort.hs)
 * [Merge sort](https://github.com/oniani/purity/blob/master/src/algorithms/sorting/MergeSort.hs)
 * [Quicksort](https://github.com/oniani/purity/blob/master/src/algorithms/sorting/Quicksort.hs)
 * [Selection Sort](https://github.com/oniani/purity/blob/master/src/algorithms/sorting/SelectionSort.hs)
+* [Shellsort](https://github.com/oniani/purity/blob/master/src/algorithms/sorting/Shellsort.hs)
 
 _Sequence generation algorithms_
 * [Arithmetic Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/ArithmeticGenerator.hs)
@@ -46,7 +48,10 @@ _Sequence generation algorithms_
 * [Stern's Diatomic Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/DiatomicGenerator.hs)
 * [Fibonacci Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/FibonacciGenerator.hs)
 * [Geometric Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/GeometricGenerator.hs)
+* [Lazy Caterer's Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/LazyCatererGenerator.hs)
+* [Magic Square Series Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/MagicSquareGenerator.hs)
 * [Prime Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/PrimeGenerator.hs)
+* [Recamán's Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/RecamanGenerator.hs)
 
 _Miscellaneous algorithms_
 * [Base Converter](https://github.com/oniani/purity/blob/master/src/algorithms/miscellaneous/BaseConverter.hs)

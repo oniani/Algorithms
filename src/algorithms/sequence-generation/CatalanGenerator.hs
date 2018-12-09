@@ -20,12 +20,7 @@ module CatalanGenerator where
 
 -- | The Catalan sequence generator function
 catalanGenerator :: Integer -> [Integer]
-catalanGenerator n = take (fromIntegral n) catalanGenerator'
-    where
-        catalanGenerator' :: [Integer]
-        catalanGenerator' = map expr [0..]
-            where
-                expr n = product [n+2..2*n] `div` product [2..n]
+catalanGenerator n = take (fromInteger n) [product [i+2..2*i] `div` product [2..i] | i <- [0..]]
 
 
 main = do

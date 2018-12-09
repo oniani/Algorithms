@@ -27,6 +27,6 @@ selectionSort xs = let x = maximum xs in selectionSort (delete x xs) ++ [x]
 
 
 main = do
-    let arr = [12, 1, 6, 31, 99, 25, 3, 56, 21, 6]
+    let arr = [12,1,6,31,99,25,3,56,21,6]
     putStr "The sorted version of the array is "
     print (selectionSort arr)

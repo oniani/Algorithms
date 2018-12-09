@@ -16,10 +16,10 @@ module BaseConverter where
 
 
 -- | A function that converts an integer to a string in any base
-baseConverter :: Int -> Int -> String
+baseConverter :: Integer -> Integer -> String
 baseConverter n b
-    | n < b = [s !! n]
-    | otherwise = baseConverter (div n b) b ++ [s !! mod n b]
+    | n < b = [s !! fromInteger n]
+    | otherwise = baseConverter (div n b) b ++ [s !! fromInteger (rem n b)]
     where
         s = "0123456789ABCDEF"
 

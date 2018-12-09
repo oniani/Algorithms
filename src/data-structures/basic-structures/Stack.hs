@@ -37,8 +37,8 @@ empty :: Stack
 empty = Stack S.empty
 
 -- | Get the size of the stack
-size :: Stack -> Int
-size (Stack x) = S.length x
+size :: Stack -> Integer
+size (Stack x) = toInteger (S.length x)
 
 -- | Push the item onto the stack
 push :: Stack -> Integer -> Stack

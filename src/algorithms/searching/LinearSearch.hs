@@ -14,7 +14,7 @@ https://en.wikipedia.org/wiki/Linear_search
 
 module LinearSearch where
 
-import qualified Data.Vector as V
+import Data.Vector (Vector, (!), fromList)
 
 
 -- NOTE: this implementation of the linear search is
@@ -24,15 +24,15 @@ import qualified Data.Vector as V
 -- the overall algorithmic complexity is still O(n).
 
 -- | Linear search
-linearSearch :: (Ord a) => V.Vector a -> a -> Int -> Int -> Int
+linearSearch :: (Ord a) => Vector a -> a -> Integer -> Integer -> Integer
 linearSearch x i l r
     | l > r = -1
-    | x V.! l == i = l
-    | x V.! r == i = r
+    | x ! fromInteger l == i = l
+    | x ! fromInteger r == i = r
     | otherwise = linearSearch x i (l + 1) (r - 1)
 
 
 main = do
-    let arr = V.fromList [1..100]
+    let arr = fromList [1..100]
     putStr "The element with the value of 10 is at the index "
     print (linearSearch arr 10 0 99)

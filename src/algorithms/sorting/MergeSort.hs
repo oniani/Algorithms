@@ -32,6 +32,6 @@ mergeSort x
 
 
 main = do
-    let arr = [12, 1, 6, 31, 99, 25, 3, 56, 21, 6]
+    let arr = [12,1,6,31,99,25,3,56,21,6]
     putStr "The sorted version of the array is "
     print (mergeSort arr)

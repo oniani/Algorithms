@@ -20,7 +20,7 @@ module CalkinWilfGenerator where
 
 -- | Calkin-Wilf sequence generator function
 calkinWilfGenerator :: Integer -> [(Integer, Integer)]
-calkinWilfGenerator n = take (fromIntegral n) [tuplify (calkinWilfGenerator' i 1 [1,1]) | i <- [1..]]
+calkinWilfGenerator n = take (fromInteger n) [tuplify (calkinWilfGenerator' i 1 [1,1]) | i <- [1..]]
     where
         tuplify [i,j] = (i,j)
         calkinWilfGenerator' :: Integer -> Integer -> [Integer] -> [Integer]

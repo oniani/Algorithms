@@ -19,8 +19,8 @@ module ArithmeticGenerator where
 -- Constant i stands for the initial value and the d is common difference.
 
 -- | The arithmetic sequence generator function
-arithmeticGenerator :: Integer -> Integer -> Integer ->[Integer]
-arithmeticGenerator n i d = [i + k | k <- [0,d..d*(n-1)]]
+arithmeticGenerator :: Integer -> Integer -> Integer -> [Integer]
+arithmeticGenerator n i d = [i + k | k <- [0,d..d * (n-1)]]
 
 
 main = do

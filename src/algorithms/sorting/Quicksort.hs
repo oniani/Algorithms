@@ -1,6 +1,6 @@
 {- |
 Module      :  Quicksort.hs
-Description :  Module implements the quick sort algorithm
+Description :  Module implements the quicksort algorithm
 Copyright   :  (c) David Oniani
 License     :  MIT
 
@@ -17,16 +17,11 @@ module Quicksort where
 
 -- | Quicksort
 quicksort :: (Ord a) => [a] -> [a]
-quicksort x
-    | length x < 2 = x
-    | otherwise = quicksort less ++ [pivot] ++ quicksort greater
-    where
-        pivot = head x
-        less = [i | i <- tail x, i <= pivot]
-        greater = [i | i <- tail x, i > pivot]
+quicksort [] = []
+quicksort (x:xs) = quicksort (filter (<= x) xs) ++ [x] ++ quicksort (filter (> x) xs)
 
 
 main = do
-    let arr = [12, 1, 6, 31, 99, 25, 3, 56, 21, 6]
+    let arr = [12,1,6,31,99,25,3,56,21,6]
     putStr "The sorted version of the array is "
     print (quicksort arr)

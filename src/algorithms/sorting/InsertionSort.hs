@@ -1,6 +1,6 @@
 {- |
 Module      :  InsertionSort.hs
-Description :  Module implements the selection sort algorithm
+Description :  Module implements the insertion sort algorithm
 Copyright   :  (c) David Oniani
 License     :  MIT
 
@@ -12,14 +12,13 @@ For more information, follow the link below.
 https://en.wikipedia.org/wiki/Insertion_sort
 -}
 
-module SelectionSort where
+module InsertionSort where
 
 
 -- | Insertion sort
-insertionSort :: Ord a => [a] -> [a]
-insertionSort x
-    | null x = []
-    | otherwise = insert (head x) (insertionSort (tail x))
+insertionSort :: (Ord a) => [a] -> [a]
+insertionSort [] = []
+insertionSort x = foldr insert [] x
     where
         insert y [] = [y]
         insert y (z:zs)
@@ -28,6 +27,6 @@ insertionSort x
 
 
 main = do
-    let arr = [12, 1, 6, 31, 99, 25, 3, 56, 21, 6]
+    let arr = [12,1,6,31,99,25,3,56,21,6]
     putStr "The sorted version of the array is "
     print (insertionSort arr)
