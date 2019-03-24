@@ -13,7 +13,8 @@ https://en.wikipedia.org/wiki/Binary_search_tree
 -}
 
 module BinarySearchTree
-    ( rootInitialize
+    ( BinarySearchTree (..)
+    , rootInitialize
     , insertNode
     , preorderTraversal
     , inorderTraversal
