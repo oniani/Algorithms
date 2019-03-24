@@ -1,6 +1,6 @@
 # Purity
 
-This repository has the implementations of various algorithms and data structures for the everyday use. Everything is implemented in [Haskell](https://www.haskell.org/). Obviously, most, if not all, algorithms and data structures use recursion in some way. The primary goal of the repository is to have a collection of high-performance and, preferably, minimal implementations algorithms and data structures.
+This repository has the implementations of various algorithms and data structures for the everyday use. Everything is implemented in [Haskell](https://www.haskell.org/). Obviously, most, if not all, algorithms and data structures use recursion in some way. The primary goal of the repository is to have a collection of high-performance and, preferably, minimal implementations of algorithms and data structures.
 
 ### Why Haskell?
 Haskell allows us to embrace the beautiful ideas of function reusability and complexity management. In other words, functions
@@ -13,6 +13,7 @@ can be treated as variables which opens up a whole new world of algorithms and d
 _Basic data structures_
 * [Binary search tree](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/BinarySearchTree.hs)
 * [Binary tree](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/BinaryTree.hs)
+* [Fraction](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/Fraction.hs)
 * [Linked List](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/LinkedList.hs)
 * [Queue](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/Queue.hs)
 * [Stack](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/Stack.hs)
