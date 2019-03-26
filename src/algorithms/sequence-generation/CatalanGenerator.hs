@@ -23,6 +23,7 @@ catalanGenerator :: Integer -> [Integer]
 catalanGenerator n = take (fromInteger n) [product [i+2..2*i] `div` product [2..i] | i <- [0..]]
 
 
+main :: IO ()
 main = do
     putStr "The first 100 elements of the Catalan sequence are "
     print (catalanGenerator 100)

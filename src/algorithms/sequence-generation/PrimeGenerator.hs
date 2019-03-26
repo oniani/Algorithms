@@ -42,6 +42,7 @@ primeGenerator n = take (fromInteger n) (2:3:primes)
         divisible n p = rem n p == 0
 
 
+main :: IO ()
 main = do
     putStr "The first 100 primes are "
     print (primeGenerator 100)

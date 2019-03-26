@@ -23,6 +23,7 @@ fibonacciGenerator n = take (fromInteger n) fibonacciGenerator'
         fibonacciGenerator' = 0 : 1 : zipWith (+) fibonacciGenerator' (tail fibonacciGenerator')
 
 
+main :: IO ()
 main = do
     putStr "The first 100 elements of the Fibonacci sequence are "
     print (fibonacciGenerator 100)

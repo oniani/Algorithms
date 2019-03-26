@@ -24,6 +24,7 @@ baseConverter n b
         s = "0123456789ABCDEF"
 
 
+main :: IO ()
 main = do
     putStr "The result of the conversion is "
     print (baseConverter 3735928559 16)

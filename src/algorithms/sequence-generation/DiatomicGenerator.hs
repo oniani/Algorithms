@@ -26,6 +26,7 @@ diatomicGenerator n = take (fromInteger n) [diatomicGenerator' i | i <- [0..]]
             | odd k = diatomicGenerator' (div (k - 1) 2) + diatomicGenerator' (div (k + 1) 2)
 
 
+main :: IO ()
 main = do
     putStr "The first 100 elements of the Stern's diatomic sequence are "
     print (diatomicGenerator 100)

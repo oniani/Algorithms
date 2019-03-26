@@ -25,6 +25,7 @@ exponentialSearch x i l r
     | otherwise = binarySearch x i ((l + 1) `div` 2) (min (l + 1) r)
 
 
+main :: IO ()
 main = do
     let arr = fromList [1..100]
     putStr "The element with the value of 10 is at the index "

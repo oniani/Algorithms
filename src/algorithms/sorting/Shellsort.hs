@@ -27,6 +27,7 @@ shellsort xs = foldr (decolumnize (map (foldr insert []))) xs gaps
         decolumnize f k = concat . transpose . f . transpose . takeWhile (not . null) . unfoldr (Just . splitAt k)
 
 
+main :: IO ()
 main = do
     let arr = [12,1,6,31,99,25,3,56,21,6]
     putStr "The sorted version of the array is "

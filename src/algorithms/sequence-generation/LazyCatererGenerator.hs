@@ -20,6 +20,7 @@ lazyCatererGenerator :: Integer -> [Integer]
 lazyCatererGenerator x = take (fromInteger x) [div (i^2 + i + 2) 2 | i <- [0..]]
 
 
+main :: IO ()
 main = do
     putStr "The first 100 elements of the lazy caterer's sequence are "
     print (lazyCatererGenerator 100)

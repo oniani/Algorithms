@@ -30,6 +30,7 @@ interpolationSearch x i l r
         guess = x ! fromInteger pos
 
 
+main :: IO ()
 main = do
     let arr = fromList [1..100]
     putStr "The element with the value of 10 is at the index "

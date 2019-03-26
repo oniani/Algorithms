@@ -64,6 +64,7 @@ deleteNodeAt (LinkedList nodeValue nextNode) deleteIndex
     | otherwise = LinkedList nodeValue (deleteNodeAt nextNode (deleteIndex - 1))
 
 
+main :: IO ()
 main = do
     let linkedList = nullNode
     let linkedList1 = appendNode linkedList 1

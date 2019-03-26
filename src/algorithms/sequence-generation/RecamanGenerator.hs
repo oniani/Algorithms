@@ -29,6 +29,7 @@ recamanGenerator = recamanGenerator' [0]
                 expr2 = last x + toInteger (length x)
 
 
+main :: IO ()
 main = do
     putStr "The first 100 elements of the Recaman's sequence are "
     print (recamanGenerator 100)

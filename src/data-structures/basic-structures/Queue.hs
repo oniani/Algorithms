@@ -65,6 +65,7 @@ null :: Queue -> Bool
 null (Queue x) = S.null x
 
 
+main :: IO ()
 main = do
     let queue1 = Queue (S.fromList [0..9])
     let queue2 = dequeue queue1

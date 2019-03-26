@@ -24,6 +24,7 @@ countingSort x = concat [replicate (snd j) (fst j) | j <- y]
         y = sortBy (\ f s -> fst f `compare` fst s) (nub (zip x [length (filter (==i) x) | i <- x]))
 
 
+main :: IO ()
 main = do
     let arr = [12,1,6,31,99,25,3,56,21,6]
     putStr "The sorted version of the array is "

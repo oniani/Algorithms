@@ -26,6 +26,7 @@ collatzGenerator n = collatzGenerator' n []
             | odd n = collatzGenerator' (3 * n + 1) (x ++ [n])
 
 
+main :: IO ()
 main = do
     putStr "The Collatz sequence for the number 100 is "
     print (collatzGenerator 100)

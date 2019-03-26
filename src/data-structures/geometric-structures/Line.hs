@@ -66,6 +66,7 @@ isPerpendicular (Line a) (Line b)
     | otherwise = False
 
 
+main :: IO ()
 main = do
     let line1 = Line [Point (2, 4.5), Point (4, 8)]
     let line2 = Line [Point (1, 1), Point (2, 2)]

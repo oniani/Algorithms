@@ -32,6 +32,7 @@ linearSearch x i l r
     | otherwise = linearSearch x i (l + 1) (r - 1)
 
 
+main :: IO ()
 main = do
     let arr = fromList [1..100]
     putStr "The element with the value of 10 is at the index "

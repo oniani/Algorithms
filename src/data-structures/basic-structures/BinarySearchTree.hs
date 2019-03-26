@@ -108,6 +108,7 @@ isNullTree NULL = True
 isNullTree _ = False
 
 
+main :: IO ()
 main = do
     let bst = rootInitialize
     print bst

@@ -65,6 +65,7 @@ null :: Stack -> Bool
 null (Stack x) = S.null x
 
 
+main :: IO ()
 main = do
     let stack1 = Stack (S.fromList [0..9])
     let stack2 = pop stack1

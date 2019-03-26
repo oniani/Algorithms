@@ -23,6 +23,7 @@ geometricGenerator :: Integer -> Integer -> Integer ->[Integer]
 geometricGenerator n i r = [i * r^k | k <- [0..n-1]]
 
 
+main :: IO ()
 main = do
     putStr "The first 100 elements of the geometric sequence are "
     print (geometricGenerator 100 1 2)

@@ -76,6 +76,7 @@ isNullNode NULL = True
 isNullNode _ = False
 
 
+main :: IO ()
 main = do
     print nullNode
     let node1 = newNode 1

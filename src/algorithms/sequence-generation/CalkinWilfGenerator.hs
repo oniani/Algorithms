@@ -29,6 +29,7 @@ calkinWilfGenerator n = take (fromInteger n) [tuplify (calkinWilfGenerator' i 1 
             | otherwise = calkinWilfGenerator' n (m + 1) [j,2 * div i j * j + j - i]
 
 
+main :: IO ()
 main = do
     putStr "The first 100 elements of the Calkin-Wilf sequence sequence are "
     print (calkinWilfGenerator 100)

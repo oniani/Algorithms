@@ -23,6 +23,7 @@ arithmeticGenerator :: Integer -> Integer -> Integer -> [Integer]
 arithmeticGenerator n i d = [i + k | k <- [0,d..d * (n-1)]]
 
 
+main :: IO ()
 main = do
     putStr "The first 100 elements of the arithmetic series are "
     print (arithmeticGenerator 100 10 15)

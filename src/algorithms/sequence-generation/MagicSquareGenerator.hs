@@ -20,6 +20,7 @@ magicSquareGenerator :: Integer -> [Integer]
 magicSquareGenerator x = take (fromInteger x) [div (i * (i^2 + 1)) 2 | i <- [3..]]
 
 
+main :: IO ()
 main = do
     putStr "The first 100 elements of the magic square series are "
     print (magicSquareGenerator 100)

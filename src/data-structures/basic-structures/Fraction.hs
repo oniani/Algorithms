@@ -91,6 +91,7 @@ instance Fractional Fraction where
     fromRational                    = undefined
 
 
+main :: IO ()
 main = do
     let fraction1 = Fraction 1 3
     let fraction2 = Fraction 1 3

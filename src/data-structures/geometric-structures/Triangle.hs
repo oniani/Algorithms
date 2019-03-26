@@ -215,6 +215,7 @@ info (Triangle a b c)
         agd = "Angles (degrees):   " ++ format     (toDegreesTriangle $ angles tri) "< BAC" "< ABC" "< ACB"          ++ "\n"
 
 
+main :: IO ()
 main = do
     let triangle = Triangle 3 4 5
     info triangle
