@@ -50,7 +50,7 @@ _Sequence generation algorithms_
 * [Fibonacci Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/FibonacciGenerator.hs)
 * [Geometric Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/GeometricGenerator.hs)
 * [Lazy Caterer's Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/LazyCatererGenerator.hs)
-* [Magic Square Series Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/MagicSquareGenerator.hs)
+* [Magic Square Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/MagicSquareGenerator.hs)
 * [Prime Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/PrimeGenerator.hs)
 * [Recamán's Sequence Generator](https://github.com/oniani/purity/blob/master/src/algorithms/sequence-generation/RecamanGenerator.hs)
 
