@@ -2,7 +2,7 @@
 Module      :  ExponentialSearch.hs
 Description :  Module implements the exponential search algorithm
 Copyright   :  (c) David Oniani
-License     :  MIT
+License     :  GNU General Public License v3.0
 
 Maintainer  :  onianidavid@gmail.com
 Stability   :  provisional

@@ -57,5 +57,5 @@ _Sequence generation algorithms_
 _Miscellaneous algorithms_
 * [Base Converter](https://github.com/oniani/purity/blob/master/src/algorithms/miscellaneous/BaseConverter.hs)
 
-## License
-[MIT](https://github.com/oniani/purity/blob/master/LICENSE)
+### License
+[GNU General Public License v3.0](LICENSE)

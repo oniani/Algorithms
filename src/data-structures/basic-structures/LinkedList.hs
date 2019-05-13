@@ -2,7 +2,7 @@
 Module      :  BinaryTreeNode.hs
 Description :  Module implements the linked list data structure
 Copyright   :  (c) David Oniani
-License     :  MIT
+License     :  GNU General Public License v3.0
 
 Maintainer  :  onianidavid@gmail.com
 Stability   :  provisional

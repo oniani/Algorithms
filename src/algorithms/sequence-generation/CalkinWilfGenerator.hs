@@ -2,7 +2,7 @@
 Module      :  CalkinWilfGenerator.hs
 Description :  Module implements the Calkin-Wilf sequence generation algorithm
 Copyright   :  (c) David Oniani
-License     :  MIT
+License     :  GNU General Public License v3.0
 
 Maintainer  :  onianidavid@gmail.com
 Stability   :  provisional

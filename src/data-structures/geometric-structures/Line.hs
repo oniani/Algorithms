@@ -2,7 +2,7 @@
 Module      :  Line.hs
 Description :  Module implements various algorithms to deal with lines in XOY coordinate system.
 Copyright   :  (c) David Oniani
-License     :  MIT
+License     :  GNU General Public License v3.0
 
 Maintainer  :  onianidavid@gmail.com
 Stability   :  provisional

@@ -2,7 +2,7 @@
 Module      :  LazyCatererGenerator.hs
 Description :  Module implements the lazy caterer's sequence generation algorithm
 Copyright   :  (c) David Oniani
-License     :  MIT
+License     :  GNU General Public License v3.0
 
 Maintainer  :  onianidavid@gmail.com
 Stability   :  provisional
