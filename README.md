@@ -1,15 +1,13 @@
 # Purity
-
 This repository has the implementations of various algorithms and data structures for the everyday use. Everything is implemented in [Haskell](https://www.haskell.org/). Obviously, most, if not all, algorithms and data structures use recursion in some way. The primary goal of the repository is to have a collection of high-performance and, preferably, minimal implementations of algorithms and data structures.
 
-### Why Haskell?
+## Why Haskell?
 Haskell allows us to embrace the beautiful ideas of function reusability and complexity management. In other words, functions
 can be treated as variables which opens up a whole new world of algorithms and data structures. By treating the functions as the first class citizens, Haskell evangelizes the idea of breaking down a problem into simple steps and dealing with the smaller subproblems making the problem-solving a lot more efficient. Besides, its lazy evaluation makes the algorithms extremely fast by not computing the values which are not going to be used.
 
 ## Current implementations
 
 ### Data Structures
-
 _Basic data structures_
 * [Binary search tree](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/BinarySearchTree.hs)
 * [Binary tree](https://github.com/oniani/purity/blob/master/src/data-structures/basic-structures/BinaryTree.hs)
@@ -24,7 +22,6 @@ _Geometric data structures_
 
 
 ### Algorithms
-
 _Searching algorithms_
 * [Binary search](https://github.com/oniani/purity/blob/master/src/algorithms/searching/BinarySearch.hs)
 * [Exponential search](https://github.com/oniani/purity/blob/master/src/algorithms/searching/ExponentialSearch.hs)
@@ -57,5 +54,5 @@ _Sequence generation algorithms_
 _Miscellaneous algorithms_
 * [Base Converter](https://github.com/oniani/purity/blob/master/src/algorithms/miscellaneous/BaseConverter.hs)
 
-### License
+## License
 [GNU General Public License v3.0](LICENSE)
