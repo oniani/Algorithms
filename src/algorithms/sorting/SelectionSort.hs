@@ -2,7 +2,7 @@
 Module      :  SelectionSort.hs
 Description :  Module implements the selection sort algorithm
 Copyright   :  (c) David Oniani
-License     :  GNU General Public License v3.0
+License     :  MIT License
 
 Maintainer  :  onianidavid@gmail.com
 Stability   :  provisional

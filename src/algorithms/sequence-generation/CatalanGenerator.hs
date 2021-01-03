@@ -2,7 +2,7 @@
 Module      :  CatalanGenerator.hs
 Description :  Module implements the Catalan number series generation algorithm
 Copyright   :  (c) David Oniani
-License     :  GNU General Public License v3.0
+License     :  MIT License
 
 Maintainer  :  onianidavid@gmail.com
 Stability   :  provisional
