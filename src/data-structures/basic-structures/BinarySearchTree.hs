@@ -2,7 +2,7 @@
 Module      :  BinarySearchTree.hs
 Description :  Module implements the binary search tree data structure
 Copyright   :  (c) David Oniani
-License     :  GNU General Public License v3.0
+License     :  MIT License
 
 Maintainer  :  onianidavid@gmail.com
 Stability   :  provisional

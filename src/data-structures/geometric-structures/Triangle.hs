@@ -2,7 +2,7 @@
 Module      :  Triangle.hs
 Description :  Module implements various algorithms to deal with triangles.
 Copyright   :  (c) David Oniani
-License     :  GNU General Public License v3.0
+License     :  MIT License
 
 Maintainer  :  onianidavid@gmail.com
 Stability   :  provisional

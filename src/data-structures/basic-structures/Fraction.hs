@@ -2,7 +2,7 @@
 Module      :  Fraction.hs
 Description :  Module implements the Fraction datatype
 Copyright   :  (c) David Oniani
-License     :  GNU General Public License v3.0
+License     :  MIT License
 Maintainer  :  onianidavid@gmail.com
 Stability   :  provisional
 Portability :  portable
